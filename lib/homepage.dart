@@ -4,8 +4,6 @@ import 'package:flappybird/bird.dart';
 import 'package:flappybird/coverscreen.dart';
 import 'package:flutter/material.dart';
 
-import 'bird.dart';
-import 'coverscreen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -40,7 +38,7 @@ class _HomePageState extends State<HomePage> {
 
   void startGame() {
     gameHasStarted = true;
-    Timer.periodic(Duration(milliseconds: 10), (timer) {
+    Timer.periodic(const Duration(milliseconds: 10), (timer) {
       // a real physical jump is the same as an upside down parabola
       // so this is a simple quadratic equation
       height = gravity * time * time + velocity * time;
@@ -95,7 +93,7 @@ class _HomePageState extends State<HomePage> {
         builder: (BuildContext context) {
           return AlertDialog(
             backgroundColor: Colors.brown,
-            title: Center(
+            title: const Center(
               child: Text(
                 "G A M E  O V E R",
                 style: TextStyle(color: Colors.white),
@@ -107,9 +105,9 @@ class _HomePageState extends State<HomePage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(5),
                   child: Container(
-                    padding: EdgeInsets.all(7),
+                    padding: const EdgeInsets.all(7),
                     color: Colors.white,
-                    child: Text(
+                    child: const Text(
                       'ESSAYEZ ENCORE',
                       style: TextStyle(color: Colors.brown),
                     ),
@@ -227,7 +225,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Container(
                 color: Colors.brown,
-                child: Center(
+                child: const Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

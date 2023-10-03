@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 class MyCoverScreen extends StatelessWidget {
   final bool gameHasStarted;
 
-  MyCoverScreen({required this.gameHasStarted});
+  const MyCoverScreen({super.key, required this.gameHasStarted});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment(0, -0.5),
+      alignment: const Alignment(0, -0.5),
       child: Text(
         gameHasStarted ? '' : 'TAP POUR JOUER',
-        style: TextStyle(color: Colors.white, fontSize: 25),
+        style: const TextStyle(color: Colors.white, fontSize: 25),
       ),
     );
   }
